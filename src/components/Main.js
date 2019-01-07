@@ -1,40 +1,19 @@
 import React,{ Component } from 'react';
+import Project from './Project.js'
 import KingstonWokBanner from '../media/KingstonWokBanner.png'
 import KingstonWokPhone from '../media/KingstonWokPhone.png'
-import SkinCareCenterDesktop from '../media/SkinCareCenterDesktop.png'
+import Mudkip from '../media/Mudkip.png'
 import SkinCareCenterMobile from '../media/SkinCareCenterMobile.png'
 
 export default class Main extends Component{
-  state = {
-    imgHover:{},
-    divHover:{},
-    imgText:{display:"none"}
-  }
-  overlay = () => {
-    this.setState({
-      imgText:{position:"absolute", color:"#fff",left:"30%", top:"7%", fontSize:"3rem"},
-      imgHover:{opacity:"0.5", transition: ".4s ease-in-out"},
-      divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative"}
-    })
-  }
 
-  unoverlay= () => {
-    this.setState({
-      imgHover:{},
-      divHover:{},
-      imgText:{display:"none"}
-    })
-  }
   render(){
     return(
       <div className="homepage-showcase">
-        <div style={this.state.divHover} onMouseLeave={this.unoverlay}  onMouseOver={this.overlay}>
-          <div style={this.state.imgText}>
-            <h2>Kingston Wok</h2>
-            <p><small><i className="fas fa-utensils"></i> Restaurant</small>   <small style={{marginLeft:"2rem"}}>#Asian Fusion</small></p>
-          </div>
-          <img style={this.state.imgHover} src={KingstonWokBanner} alt="Kingston Wok desktop view." />
-        </div>
+        <Project info={["Restaurant", "Asian Fusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokBanner} />
+        <Project info={["", "skincare"]} icon="" name="C&F Skincare" image={SkinCareCenterMobile} />
+        <Project info={["", "PWA"]} icon="" name="Job Tracker" image={Mudkip} />
+
 
       </div>
     )
