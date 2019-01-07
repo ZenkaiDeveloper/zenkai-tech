@@ -16,6 +16,7 @@ export default class SideMenu extends Component{
           <div className="company-logo">
             <img src={CompanyLogo} alt="Company Logo" />
             <h2>Modern Web Development</h2>
+            <small>Zenkai Tech Copyright &copy; 2019.</small>
           </div>
         </div>
       </div>
