@@ -9,9 +9,9 @@ export default class Project extends Component{
   }
   overlay = () => {
     this.setState({
-      imgText:{position:"absolute", color:"#fff",left:"30%", top:"7%", fontSize:"3rem"},
+      imgText:{position:"absolute", color:"#fff",left:"30%", top:"7%", fontSize:"2rem"},
       imgHover:{opacity:"0.5", transition: ".4s ease-in-out"},
-      divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative"}
+      divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative", overflow:"hidden"}
     })
   }
 
