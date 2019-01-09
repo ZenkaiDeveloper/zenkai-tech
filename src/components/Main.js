@@ -86,23 +86,49 @@ export default class Main extends Component{
           <h1 className='work'>Contact</h1>
           <hr className="style-two"/>
           <h2>Need a website or have a cool project that you want to collaborate on? Feel free to reach out.</h2>
-          <div className="icon-info">
-            <div className="contact-first">
-              <img src={pfp} alt="company logo" />
-            </div>
-            <div className="info-text">
-              <div className="my-info">
-                <small>Web Developer</small>
-                <h3>Andy Wang</h3>
-              </div>
-              <p><i className="far fa-envelope"></i> andy@zenkai.tech</p>
-              <p><i className="fas fa-phone"></i> 347-522-1971</p>
-              <p className="icon">
-                <a target="_blank" href="https://www.linkedin.com/in/andy-wang32/"><i className="fab fa-linkedin"></i></a>
-              </p>
-            </div>
 
+
+          <div className="card">
+            <div className="icon-info">
+              <div className="card-front">
+                <div className="contact-first">
+                  <img src={pfp} alt="company logo" />
+                </div>
+                <div className="info-text">
+                  <div className="my-info">
+                    <small>Web Developer</small>
+                    <h3>Andy Wang</h3>
+                  </div>
+                  <p><i className="far fa-envelope"></i> andy@zenkai.tech</p>
+                  <p><i className="fas fa-phone"></i> 347-522-1971</p>
+                  <p><i className="fas fa-globe"></i> zenkai.tech</p>
+                </div>
+              </div>
+              <div className="card-back">
+                <div className="icon-container">
+
+                  <p className="email-icon icon">
+                    <a target="_blank" href="mailto:wang.andy32@gmail.com"><i className="far fa-envelope"></i></a>
+                  </p>
+
+                  <p className="linkedin-icon icon">
+                    <a target="_blank" href="https://www.linkedin.com/in/andy-wang32/"><i className="fab fa-linkedin"></i></a>
+                  </p>
+
+                  <p className="gh-icon icon">
+                    <a target="_blank" href="https://github.com/ZenkaiDeveloper"><i className="fab fa-github"></i></a>
+                  </p>
+
+                  <p className="yt-icon icon">
+                    <a target="_blank" href="https://www.youtube.com/channel/UCbSkA8Z_qpKpRenDjv2D3nA?"><i className="fab fa-youtube"></i></a>
+                  </p>
+
+                </div>
+              </div>
+
+            </div>
           </div>
+
 
 
 
