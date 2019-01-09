@@ -4,6 +4,11 @@
   display:none;
 }
 
+.navigation li a{
+  text-decoration: none;
+  color:#bbb;
+}
+
 .navbar{
   list-style-type: none;
   position: fixed;
@@ -202,6 +207,67 @@ hr.style-two {
   border-radius:5px;
 }
 
+.contact h2{
+  text-align: center;
+  font-family: Thasadith;
+}
+
+.icon-info{
+  font-size:1.2rem;
+  width:50%;
+  margin: 0 auto;
+  padding-top:4rem;
+  padding-bottom:1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+
+
+.contact-first{
+  align-self: center;
+  justify-self:center;
+  position: relative;
+}
+
+
+
+.icon-info img{
+  width:10rem;
+}
+
+.icon{
+  font-size: 3rem;
+  margin-top:1rem;
+}
+
+.icon a{
+  text-decoration: none;
+  color:#0077B5;
+}
+
+.my-info{
+  border-left:2px solid gray;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.my-info small{
+  margin-bottom:0rem;
+}
+
+.my-info h3{
+  margin-top:.3rem;
+}
+
+.info-text p{
+  margin-top:0;
+  margin-bottom:1rem;
+}
+
 
 @media screen and (max-width:800px){
   .horizontal-header{
@@ -266,5 +332,13 @@ hr.style-two {
   .about p{
     font-size: 1rem;
     line-height: normal;
+  }
+
+  .icon-info{
+    width: 85%;
+  }
+
+  .icon-info img{
+    width:5rem;
   }
 }

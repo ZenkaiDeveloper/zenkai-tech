@@ -10,7 +10,7 @@ export default class SideMenu extends Component{
           <div className="navigation">
             <li>Work</li>
             <li>About</li>
-            <li>Blog</li>
+            <li><a href="https://zenkaideveloper.github.io/">Blog</a></li>
             <li>Contact</li>
           </div>
           <div className="company-logo">
