@@ -9,15 +9,15 @@ export default class Project extends Component{
   }
   overlay = () => {
     this.setState({
-      imgText:{position:"absolute", color:"#fff",left:"30%", top:"7%", fontSize:"2rem"},
+      imgText:{position:"absolute", color:"#fff",left:"30%", top:"15%", fontSize:"2rem"},
       imgHover:{opacity:"0.5", transition: ".4s ease-in-out"},
-      divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative", overflow:"hidden"}
+      divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative", overflow:"hidden", borderRadius:"5px"}
     })
   }
 
   unoverlay= () => {
     this.setState({
-      imgHover:{},
+      imgHover:{borderRadius:"5px"},
       divHover:{},
       imgText:{display:"none"}
     })
@@ -30,7 +30,7 @@ export default class Project extends Component{
           <h2>{this.props.name}</h2>
           <p><small><i className={this.props.icon}></i> {this.props.info[0]}</small>   <small style={{marginLeft:"2rem"}}>#{this.props.info[1]}</small></p>
         </div>
-        <img style={this.state.imgHover} src={this.props.image} alt="Kingston Wok desktop view." />
+        <img className="project-img" style={this.state.imgHover} src={this.props.image} alt="Kingston Wok desktop view." />
       </div>
     )
   }

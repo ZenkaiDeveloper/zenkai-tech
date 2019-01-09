@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Thasadith|Share+Tech+Mono');
 
+.horizontal-header{
+  display:none;
+}
+
+.navbar{
+  list-style-type: none;
+  position: fixed;
+  background-color:#eee;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+.navbar li{
+  display: inline;
+}
+
+.navbar li a{
+  text-decoration: none;
+}
+
+.work{
+  width: 100%;
+  text-align: center;
+  color:#ccc;
+  font-family: Thasadith;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size:2.7rem;
+}
+
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    margin-bottom: 2rem;
+}
+
 .homepage{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -7,7 +47,6 @@
 
 .homepage > div:nth-child(2){
   grid-column: 2/4;
-
 }
 
 .homepage > div:nth-child(1){
@@ -67,34 +106,52 @@
   right:2rem;
 }
 
+.navbar .banner-logo img{
+  display: inline-block;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
 .homepage-showcase{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 2rem;
 }
 
-.homepage-showcase > div:nth-child(1){
+.homepage-showcase .kingston-wok{
+  margin:0 1rem;
   margin-top:1rem;
-  grid-column: 2/12;
+  grid-column: 1/13;
 }
 
-.homepage-showcase > div:nth-child(2){
+.kingston-wok-mobile{
+  display: none;
+}
+
+.homepage-showcase .skincare{
   grid-column: 1/7;
+  margin-left: 1rem;
 }
 
-.homepage-showcase > div:nth-child(3){
-  padding-top:2.5rem;
-  grid-column: 7/12;
+.homepage-showcase .mudkip{
+  grid-column: 7/13;
+  margin:0 1rem;
 }
 
-.homepage-showcase > div:nth-child(5){
-  grid-column: 2/12;
+.homepage-showcase .jukebox{
+  grid-column: 1/13;
+  margin:0 1rem;
 
 }
 
-.homepage-showcase > div:nth-child(6){
-  grid-column: 1/12;
-  margin-bottom: 2rem;
+.homepage-showcase .beatpop{
+  grid-column: 1/13;
+  margin:0 1rem;
+}
+
+.about-header{
+  grid-column: 1/13;
 }
 
 
@@ -103,11 +160,14 @@
   background-color: rgba(47, 93, 168,.9);
   color:#f4f4f4;
   padding: 2rem;
+  margin: 0 1rem;
+  border-radius: 5px;
   font-size:1.2rem;
   line-height: 150%;
   word-spacing: 115%;
   letter-spacing: 110%;
   transition: .4s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .about:hover{
@@ -134,7 +194,77 @@
   text-align: center;
 }
 
-
 .homepage-showcase > div img{
   width: 100%;
+}
+
+.project-img{
+  border-radius:5px;
+}
+
+
+@media screen and (max-width:800px){
+  .horizontal-header{
+    display:block;
+  }
+
+  .homepage > div:nth-child(1){
+    display: none;
+  }
+  .homepage > div:nth-child(2){
+    grid-column: 1/4;
+  }
+
+  .homepage-showcase{
+    grid-gap: 2rem;
+  }
+
+  .homepage-showcase .kingston-wok{
+    display: none;
+  }
+
+  .kingston-wok-mobile{
+    grid-column: 1/13;
+    display: block;
+  }
+
+  .work{
+    margin-top:6rem;
+  }
+
+  .kingston-wok-mobile img{
+    border-radius: 0;
+  }
+
+  .homepage-showcase .skincare, .homepage-showcase > .mudkip{
+    grid-column: 1/13;
+    height:80%;
+    margin:0;
+  }
+
+  .homepage-showcase > .jukebox,.homepage-showcase .beatpop{
+    display: none;
+  }
+
+  .homepage-showcase .skincare img, .homepage-showcase > .mudkip img,.homepage-showcase > .jukebox img,.homepage-showcase .beatpop img{
+    border-radius: 0;
+  }
+
+  .about-header .work{
+    margin-top: 1rem;
+  }
+
+  .about{
+    margin:0;
+    border-radius: 0;
+  }
+
+  .about h2{
+    font-size: 1.5rem;
+  }
+
+  .about p{
+    font-size: 1rem;
+    line-height: normal;
+  }
 }
