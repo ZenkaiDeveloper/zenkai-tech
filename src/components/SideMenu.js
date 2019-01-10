@@ -3,10 +3,15 @@ import CompanyLogo from '../media/ZenkaiTech.png';
 
 
 export default class SideMenu extends Component{
+
+  clickHandler = (e) => {
+    this.props.setTerm(e);
+  }
+
   render(){
     return(
       <div>
-        <div className="homepage-left">
+        <div onClick={this.clickHandler} className="homepage-left">
           <div className="navigation">
             <li>Work</li>
             <li>About</li>

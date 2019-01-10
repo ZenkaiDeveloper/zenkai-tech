@@ -11,6 +11,12 @@ import BeatPop from '../media/BeatPop.png'
 import pfp from '../media/pfp.png'
 
 export default class Main extends Component{
+  constructor(props){
+    super()
+    this.work = React.createRef();
+    this.about = React.createRef();
+    this.contact = React.createRef();
+  }
   state={
     imgId:"",
     headerContent:"Hi, im Andy.",
@@ -33,6 +39,13 @@ export default class Main extends Component{
     })
   }
 
+  componentDidUpdate(){
+    window.scrollTo({
+      top:this[this.props.scrollTerm].current.offsetTop - 100,
+      behavior: 'smooth'
+    })
+  }
+
   render(){
     return(
       <div>
@@ -40,7 +53,7 @@ export default class Main extends Component{
           <TopMenu />
         </div>
 
-        <h1 className='work'>Featured Work</h1>
+        <h1 ref={this.work} className='work'>Featured Work</h1>
         <hr className="style-two"/>
         <div className="homepage-showcase">
 
@@ -68,7 +81,7 @@ export default class Main extends Component{
             <Project info={["Music", "game"]} icon="fas fa-headphones-alt" name="BeatPop" image={BeatPop} />
           </div>
 
-          <div className="about-header">
+          <div ref={this.about} className="about-header">
             <h2 className="work">About</h2>
             <hr className="style-two"/>
           </div>
@@ -84,7 +97,7 @@ export default class Main extends Component{
 
 
         </div>
-        <div className="contact">
+        <div ref={this.contact} className="contact">
           <h1 className='work'>Contact</h1>
           <hr className="style-two"/>
           <h2>Need a website or have a cool project that you want to collaborate on? Feel free to reach out.</h2>

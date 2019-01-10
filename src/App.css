@@ -187,8 +187,7 @@ hr.style-two {
 }
 
 .about:hover{
-  background-color: rgba(47, 93, 168,.6);
-  color: #000;
+  background-color: rgba(47, 93, 168,.8);
 }
 
 .about .self-img{
@@ -202,7 +201,7 @@ hr.style-two {
 }
 
 #div-hover{
-  border:2px solid #000;
+  border:2px solid #eee;
 }
 
 .about h2{
