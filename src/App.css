@@ -128,6 +128,11 @@ hr.style-two {
   margin:0 1rem;
   margin-top:1rem;
   grid-column: 1/13;
+  animation-name:top-down;
+  animation-duration: 1s;
+  animation-delay:1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .kingston-wok-mobile{
@@ -137,17 +142,23 @@ hr.style-two {
 .homepage-showcase .skincare{
   grid-column: 1/7;
   margin-left: 1rem;
+  animation-name: top-down-left;
+  animation-duration:1.5s;
+  animation-delay:.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .homepage-showcase .mudkip{
   grid-column: 7/13;
   margin:0 1rem;
+  animation-name: top-down-right;
+  animation-duration: 1.5s;
 }
 
 .homepage-showcase .jukebox{
   grid-column: 1/13;
   margin:0 1rem;
-
 }
 
 .homepage-showcase .beatpop{
@@ -264,7 +275,9 @@ hr.style-two {
   transform: rotateY(180deg);
 }
 
-
+.card-back h2{
+  margin:0;, .card:active .icon-info
+}
 
 .contact-first{
   align-self: center;
@@ -403,7 +416,7 @@ hr.style-two {
   .card{
     width:90%;
   }
-  
+
   .icon{
     font-size:3rem;
   }
@@ -428,5 +441,41 @@ hr.style-two {
   .my-info{
     width:50%;
     margin: 0 auto;
+  }
+}
+
+
+
+@keyframes top-down {
+  from{
+    opacity: 0;
+    transform:scale(.2) translateY(-100rem);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes top-down-left {
+  0%{
+    opacity: 0;
+    transform: scale(.5) translateX(160rem) translateY(-190rem);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0);
+  }
+}
+
+@keyframes top-down-right {
+  0%{
+    opacity: 0;
+    transform: scale(.5) translateX(-160rem) translateY(-190rem);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0);
   }
 }

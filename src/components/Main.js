@@ -40,12 +40,14 @@ export default class Main extends Component{
           <TopMenu />
         </div>
 
-        <h1 className='work'>Work</h1>
+        <h1 className='work'>Featured Work</h1>
         <hr className="style-two"/>
         <div className="homepage-showcase">
+
           <div className="kingston-wok-mobile">
             <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokPhone} />
           </div>
+
           <div className="kingston-wok">
             <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokBanner} />
           </div>
@@ -105,11 +107,8 @@ export default class Main extends Component{
                 </div>
               </div>
               <div className="card-back">
+                <h2>Find Me On</h2>
                 <div className="icon-container">
-
-                  <p className="email-icon icon">
-                    <a target="_blank" href="mailto:wang.andy32@gmail.com"><i className="far fa-envelope"></i></a>
-                  </p>
 
                   <p className="linkedin-icon icon">
                     <a target="_blank" href="https://www.linkedin.com/in/andy-wang32/"><i className="fab fa-linkedin"></i></a>
