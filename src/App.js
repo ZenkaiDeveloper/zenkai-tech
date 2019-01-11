@@ -1,27 +1,52 @@
 import React, { Component } from 'react';
 import './App.css';
-import SideMenu from './components/SideMenu'
-import Main from './components/Main'
+import SideMenu from './components/SideMenu';
+import Main from './components/Main';
+import ShowPage from './components/ShowPage';
+import { connect } from 'react-redux'
 
 class App extends Component {
-  state = {
-    scrollTerm:""
+  state={
+    rightComponent:"main"
   }
 
-  setTerm = (e) => {
-    if (e.target.innerText.length < 24) {
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.sideMenu.rightComponent !== this.state.rightComponent){
       this.setState({
-        scrollTerm: e.target.innerText.toLowerCase()
+        rightComponent: nextProps.sideMenu.rightComponent
       })
+    }else if(typeof nextProps.sideMenu.scrollTerm !== "undefined") {
+      this.setState({
+        rightComponent:"main"
+      })
+    }
+
+  }
+
+  showComponent = () => {
+    switch (this.state.rightComponent) {
+      case "main":
+        return <Main />;
+      case "Kingston Wok":
+        return <ShowPage title="Kingston Wok" />
+      case "C&F Skincare":
+        return <ShowPage title="C&F Skincare Center" />
+      case "Job Tracker":
+        return <ShowPage title="Mudkip" />
+      case "Social Jukebox":
+        return <ShowPage title="Social Jukebox" />
+      default:
+        return <Main />;
     }
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <div className="homepage">
-          <SideMenu setTerm={this.setTerm} />
-          <Main scrollTerm={this.state.scrollTerm} />
+          <SideMenu />
+          {this.showComponent()}
         </div>
 
       </div>
@@ -29,4 +54,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return state
+}
+
+export default connect(mapStateToProps)(App);

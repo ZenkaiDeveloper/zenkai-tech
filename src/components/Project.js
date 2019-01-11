@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { selectComponent } from '../actions'
 
 
-export default class Project extends Component{
+class Project extends Component{
   state = {
     imgHover:{},
     divHover:{},
@@ -23,9 +25,13 @@ export default class Project extends Component{
     })
   }
 
+  clickHandler = (e) => {
+    this.props.selectComponent(this.props.name)
+  }
+
   render(){
     return(
-      <div style={this.state.divHover} onMouseLeave={this.unoverlay}  onMouseOver={this.overlay}>
+      <div style={this.state.divHover} onClick={this.clickHandler} onMouseLeave={this.unoverlay} onMouseOver={this.overlay}>
         <div style={this.state.imgText}>
           <h2>{this.props.name}</h2>
           <p><small><i className={this.props.icon}></i> {this.props.info[0]}</small>   <small style={{marginLeft:"2rem"}}>#{this.props.info[1]}</small></p>
@@ -35,3 +41,5 @@ export default class Project extends Component{
     )
   }
 }
+
+export default connect(null, { selectComponent })(Project)

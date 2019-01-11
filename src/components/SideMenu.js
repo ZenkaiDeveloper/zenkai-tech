@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import CompanyLogo from '../media/ZenkaiTech.png';
+import { selectTerm } from '../actions';
+import { connect } from "react-redux";
 
 
-export default class SideMenu extends Component{
+class SideMenu extends Component{
 
   clickHandler = (e) => {
-    this.props.setTerm(e);
+    let term = e.target.innerText.toLowerCase();
+    if (term.length < 24 && term !== "blog") {
+      this.props.selectTerm(term);
+    }
   }
 
   render(){
@@ -29,3 +34,5 @@ export default class SideMenu extends Component{
     )
   }
 }
+
+export default connect(null,{ selectTerm })(SideMenu);

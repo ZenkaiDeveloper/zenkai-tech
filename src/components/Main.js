@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import { connect } from 'react-redux';
 import Project from './Project'
 import TopMenu from './TopMenu'
 import KingstonWokBanner from '../media/KingstonWokBanner.png'
@@ -10,7 +11,7 @@ import Jukebox from '../media/Jukebox.png'
 import BeatPop from '../media/BeatPop.png'
 import pfp from '../media/pfp.png'
 
-export default class Main extends Component{
+class Main extends Component{
   constructor(props){
     super()
     this.work = React.createRef();
@@ -20,7 +21,8 @@ export default class Main extends Component{
   state={
     imgId:"",
     headerContent:"Hi, im Andy.",
-    img:SelfImg
+    img:SelfImg,
+    height:0
   }
 
   borderHighlight = ()=>{
@@ -39,11 +41,23 @@ export default class Main extends Component{
     })
   }
 
-  componentDidUpdate(){
-    window.scrollTo({
-      top:this[this.props.scrollTerm].current.offsetTop - 100,
-      behavior: 'smooth'
-    })
+  componentDidMount(){
+    if (typeof this[this.props.sideMenu.scrollTerm] !== "undefined") {
+      window.scrollTo({
+        top:this[this.props.sideMenu.scrollTerm].current.offsetTop - 100,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if (this.props.sideMenu.scrollTerm !== prevProps.sideMenu.scrollTerm) {
+        window.scrollTo({
+          top:this[this.props.sideMenu.scrollTerm].current.offsetTop - 100,
+          behavior: 'smooth'
+        })
+    }
+
   }
 
   render(){
@@ -55,7 +69,7 @@ export default class Main extends Component{
 
         <h1 ref={this.work} className='work'>Featured Work</h1>
         <hr className="style-two"/>
-        <div className="homepage-showcase">
+        <div onScroll={this.scrollHandler} className="homepage-showcase">
 
           <div className="kingston-wok-mobile">
             <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokPhone} />
@@ -141,9 +155,6 @@ export default class Main extends Component{
             </div>
           </div>
 
-
-
-
         </div>
 
       </div>
@@ -151,3 +162,9 @@ export default class Main extends Component{
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return state;
+}
+
+export default connect(mapStateToProps)(Main)
