@@ -4,7 +4,11 @@ import SideMenu from './components/SideMenu';
 import Main from './components/Main';
 import ShowPage from './components/ShowPage';
 import { connect } from 'react-redux';
-import KingstonWokInfo from "./media/KingstonWok"
+import KingstonWokInfo from "./media/KingstonWok";
+import SkincareCenterInfo from "./media/CFSkincareCenter";
+import MudkipInfo from "./media/Mudkip";
+import SocialJukeboxInfo from "./media/SocialJukebox";
+import BeatPopInfo from "./media/BeatPop";
 
 
 class App extends Component {
@@ -32,11 +36,14 @@ class App extends Component {
       case "Kingston Wok":
         return <ShowPage video={KingstonWokInfo.video} img={KingstonWokInfo.mobilePic} alt="Kingston Wok Mobile Image" desc={KingstonWokInfo.description} title={KingstonWokInfo.title} />
       case "C&F Skincare":
-        return <ShowPage title="C&F Skincare Center" />
+        return <ShowPage title={SkincareCenterInfo.title} video={SkincareCenterInfo.video} img={SkincareCenterInfo.mobilePic} alt="C&F Skincare Center Mobile Image" desc={SkincareCenterInfo.description} />
       case "Job Tracker":
-        return <ShowPage title="Mudkip" />
+        return <ShowPage title={MudkipInfo.title} video={MudkipInfo.video} img={MudkipInfo.mobilePic} alt="Job Tracker mobile image" desc={MudkipInfo.description} />
       case "Social Jukebox":
-        return <ShowPage title="Social Jukebox" />
+        return <ShowPage title={SocialJukeboxInfo.title} video={SocialJukeboxInfo.video} img={SocialJukeboxInfo.mobilePic} alt="Socail Jukebox Mobile Pic" desc={SocialJukeboxInfo.description} />
+
+      case "BeatPop":
+        return <ShowPage title={BeatPopInfo.title} video={BeatPopInfo.video} desc={BeatPopInfo.description} />
       default:
         return <Main />;
     }
