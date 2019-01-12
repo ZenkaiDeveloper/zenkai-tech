@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css?family=Thasadith|Share+Tech+Mono');
+
+.horizontal-header{
+  display:none;
+}
+
+.navigation li a{
+  text-decoration: none;
+  color:#bbb;
+}
+
+.navbar{
+  list-style-type: none;
+  position: fixed;
+  background-color:#eee;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+.navbar li{
+  display: inline;
+}
+
+.navbar li a{
+  text-decoration: none;
+}
+
+.work{
+  width: 100%;
+  text-align: center;
+  color:#ccc;
+  font-family: Thasadith;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size:2.7rem;
+}
+
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    margin-bottom: 2rem;
+}
+
+.homepage{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.homepage > div:nth-child(2){
+  grid-column: 2/4;
+}
+
+.homepage > div:nth-child(1){
+  position: fixed;
+  width: 33.333%;
+}
+
+.homepage-left{
+  height: 100vh;
+  position: relative;
+}
+
+.homepage .navigation{
+  font-family: Thasadith;
+  color:#bbb;
+  text-transform: uppercase;
+  text-align: right;
+  list-style-type: none;
+  font-size:3rem;
+  padding-top:3rem;
+}
+
+.homepage .navigation li{
+  padding-top:1rem;
+  padding-right:3rem;
+}
+
+.homepage .navigation li:hover{
+  color:black;
+  background-color:#f4f4f4;
+  cursor: pointer;
+  transition: .4s ease-in-out;
+}
+
+.company-logo{
+  position:absolute;
+  bottom: 2rem;
+}
+
+.company-logo img{
+  width:50%;
+  margin-right:2rem;
+  display: block;
+  float: right;
+}
+
+.company-logo h2{
+  position: absolute;
+  font-family: 'Share Tech Mono', monospace;
+  bottom:1.2rem;
+  right:2rem;
+}
+
+.company-logo small{
+  position: absolute;
+  bottom:0;
+  right:2rem;
+}
+
+.navbar .banner-logo img{
+  display: inline-block;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.homepage-showcase{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 2rem;
+}
+
+.homepage-showcase .kingston-wok{
+  margin:0 1rem;
+  margin-top:1rem;
+  grid-column: 1/13;
+  animation-name:top-down;
+  animation-duration:.8s;
+  animation-delay:.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.homepage-showcase .skincare{
+  grid-column: 1/7;
+  margin-left: 1rem;
+  animation-name: top-down-left;
+  animation-duration:.8s;
+  animation-delay:.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.homepage-showcase .mudkip{
+  grid-column: 7/13;
+  margin:0 1rem;
+  animation-name: top-down-right;
+  animation-duration: .8s;
+}
+
+.homepage-showcase .jukebox{
+  grid-column: 1/13;
+  margin:0 1rem;
+}
+
+.homepage-showcase .beatpop{
+  grid-column: 1/13;
+  margin:0 1rem;
+}
+
+.about-header{
+  grid-column: 1/13;
+}
+
+
+.about{
+  grid-column: 1/13;
+  background-color: rgba(47, 93, 168,.9);
+  color:#f4f4f4;
+  padding: 2rem;
+  margin: 0 1rem;
+  border-radius: 5px;
+  font-size:1.2rem;
+  line-height: 150%;
+  word-spacing: 115%;
+  letter-spacing: 110%;
+  transition: .4s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+.about:hover{
+  background-color: rgba(47, 93, 168,.8);
+}
+
+.about .self-img{
+  display:block;
+  width:8rem;
+  height:8rem;
+  margin:0 auto;
+  border:2px solid #f4f4f4;
+  border-radius: 50%;
+  transition: .4s ease-in-out;
+}
+
+#div-hover{
+  border:2px solid #eee;
+}
+
+.about h2{
+  font-size:2rem;
+  text-align:center;
+}
+
+.homepage-showcase > div img{
+  width: 100%;
+}
+
+.project-img{
+  border-radius:5px;
+}
+
+.contact h2{
+  text-align: center;
+  font-family: Thasadith;
+}
+
+.card {
+  perspective: 1000px;
+  width: 55%;
+  height:12rem;
+  margin: 0 auto;
+}
+
+.icon-info{
+  position: relative;
+  font-size:1.2rem;
+  margin-bottom:1.5rem;
+  width:100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  padding-top:4rem;
+  padding-bottom:2.5rem;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .icon-info{
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-front{
+  display: none;
+}
+
+.card:hover .card-back{
+  display: block;
+}
+
+.card-front, .card-back{
+  width: 100%;
+  height:100%;
+  backface-visibility:hidden;
+}
+
+.card-front .contact-first{
+  backface-visibility:hidden;
+}
+
+.card-front{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-back{
+  display:none;
+  transform: rotateY(180deg);
+}
+
+.card-back h2{
+  margin:0;, .card:active .icon-info
+}
+
+.contact-first{
+  align-self: center;
+  justify-self:center;
+  position: relative;
+}
+
+
+
+.icon-info img{
+  width:10rem;
+}
+
+.icon-container{
+  width:70%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon{
+  font-size: 5rem;
+  margin-top:2rem;
+}
+
+.yt-icon a{
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.gh-icon a{
+  text-decoration: none;
+  color:#000;
+}
+
+.email-icon a{
+  text-decoration: none;
+  color: black;
+}
+
+.linkedin-icon a{
+  text-decoration: none;
+  color:#0077B5;
+}
+
+.my-info{
+  border-left:2px solid cyan;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.my-info small{
+  margin-bottom:0rem;
+}
+
+.my-info h3{
+  margin-top:.3rem;
+}
+
+.info-text p{
+  margin-top:0;
+  font-size: 1.1rem;
+  margin-bottom:1rem;
+}
+
+
+
+
+@media screen and (max-width:800px){
+  .horizontal-header{
+    display:block;
+  }
+
+  .homepage > div:nth-child(1){
+    display: none;
+  }
+  .homepage > div:nth-child(2){
+    grid-column: 1/4;
+  }
+
+  .homepage-showcase{
+    grid-gap: 2rem;
+  }
+
+  .kingston-wok-mobile{
+    grid-column: 1/13;
+    display: block;
+  }
+
+  .work{
+    margin-top:6rem;
+  }
+
+  .kingston-wok-mobile img{
+    border-radius: 0;
+  }
+
+  .homepage-showcase .skincare, .homepage-showcase > .mudkip{
+    grid-column: 1/13;
+    height:80%;
+    margin:0;
+  }
+
+  .homepage-showcase > .jukebox,.homepage-showcase .beatpop{
+    display: none;
+  }
+
+  .homepage-showcase .skincare img, .homepage-showcase > .mudkip img,.homepage-showcase > .jukebox img,.homepage-showcase .beatpop img{
+    border-radius: 0;
+  }
+
+  .about-header .work{
+    margin-top: 1rem;
+  }
+
+  .about{
+    margin:0;
+    border-radius: 0;
+  }
+
+  .about h2{
+    font-size: 1.5rem;
+  }
+
+  .about p{
+    font-size: 1rem;
+    line-height: normal;
+  }
+
+  .card{
+    width:90%;
+  }
+
+  .icon{
+    font-size:3rem;
+  }
+
+  .icon-info img{
+    width:5rem;
+  }
+
+  .contact-first{
+    display: none;
+  }
+
+  .info-text {
+    grid-column: 1/3;
+    text-align: center;
+  }
+
+  .contact .work{
+    margin-top:2rem;
+  }
+
+  .my-info{
+    width:50%;
+    margin: 0 auto;
+  }
+}
+
+
+
+@keyframes top-down {
+  from{
+    opacity: 0;
+    transform:scale(.2) translateY(-100rem);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes top-down-left {
+  0%{
+    opacity: 0;
+    transform: scale(.5) translateX(160rem) translateY(-190rem);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0);
+  }
+}
+
+@keyframes top-down-right {
+  0%{
+    opacity: 0;
+    transform: scale(.5) translateX(-160rem) translateY(-190rem);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0);
+  }
+}

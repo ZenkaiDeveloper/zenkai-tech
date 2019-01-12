@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Project from './Project'
 import TopMenu from './TopMenu'
 import KingstonWokBanner from '../media/KingstonWokBanner.png'
-import KingstonWokPhone from '../media/KingstonWokPhone.png'
 import SelfImg from '../media/self.jpeg'
 import Mudkip from '../media/Mudkip.png'
 import SkinCareCenterMobile from '../media/SkinCareCenterMobile.png'
@@ -71,10 +70,6 @@ class Main extends Component{
         <hr className="style-two"/>
         <div onScroll={this.scrollHandler} className="homepage-showcase">
 
-          <div className="kingston-wok-mobile">
-            <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokPhone} />
-          </div>
-
           <div className="kingston-wok">
             <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokBanner} />
           </div>
@@ -104,7 +99,7 @@ class Main extends Component{
             <h2>{this.state.headerContent}</h2>
             <img id={this.state.imgId} className="self-img" src={this.state.img} alt="portrait of the developer"/>
             <p>
-              I am a web developer and the founder of Zenkai Tech. Here at Zenkai Tech we design and build stunning web applications that align with modern and minimalist patterns along with added spice. All products are built to be mobile responsive with the latest technologies that have the best chance to stand the test of time. My goal is to help buisnesses start an online presence so that they are more accessible. With happy customers, I can't help but love what I do and am always looking forward to my next project.
+              I am a web developer and the founder of Zenkai Tech. Here at Zenkai Tech we design and build stunning web applications that align with modern and minimalist patterns with added spice. All products are built to be mobile responsive with the latest technologies that have the best chance to stand the test of time. My goal is to help businesses start an online presence so that they are more accessible. With happy customers, I can't help but love what I do and am always looking forward to my next project.
             </p>
           </div>
 

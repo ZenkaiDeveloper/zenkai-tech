@@ -36,7 +36,7 @@ class Project extends Component{
           <h2>{this.props.name}</h2>
           <p><small><i className={this.props.icon}></i> {this.props.info[0]}</small>   <small style={{marginLeft:"2rem"}}>#{this.props.info[1]}</small></p>
         </div>
-        <img className="project-img" style={this.state.imgHover} src={this.props.image} alt="Kingston Wok desktop view." />
+        <img className="project-img" style={this.state.imgHover} src={this.props.image} alt="Project Img" />
       </div>
     )
   }

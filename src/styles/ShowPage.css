@@ -1,0 +1,63 @@
+.showpage{
+  background-color:#191c21;
+  animation-name: bottom-top;
+  animation-duration:.5s;
+  color: #f4f4f4;
+}
+
+.showpage h1{
+  text-align: center;
+  font-size: 2.5rem;
+  margin:1.5rem 0;
+  font-family:Thasadith;
+}
+
+#show-video {
+  display: block;
+  border-radius: 5px;
+  max-width:90%;
+  margin: 0 auto;
+}
+
+.more-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 5rem;
+}
+
+.showpage-description{
+  margin-top:6rem;
+  margin-left:2rem;
+}
+
+.showpage-description p{
+  font-family:Thasadith;
+  font-size: 2rem;
+  width:70%;
+  margin: 0 auto;
+  line-height: 160%;
+  word-spacing: 115%;
+  letter-spacing: 110%;
+}
+
+.description-right{
+  margin: 0 auto;
+  width:75%;
+  margin-top:6rem;
+}
+
+.description-right img{
+  width:100%;
+  border-radius: 5px;
+}
+
+@keyframes bottom-top{
+  0%{
+    opacity: 0;
+    transform:translateY(300rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

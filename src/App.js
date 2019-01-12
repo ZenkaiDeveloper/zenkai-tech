@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import SideMenu from './components/SideMenu';
 import Main from './components/Main';
 import ShowPage from './components/ShowPage';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import KingstonWokInfo from "./media/KingstonWok"
+
 
 class App extends Component {
   state={
@@ -28,7 +30,7 @@ class App extends Component {
       case "main":
         return <Main />;
       case "Kingston Wok":
-        return <ShowPage title="Kingston Wok" />
+        return <ShowPage video={KingstonWokInfo.video} img={KingstonWokInfo.mobilePic} alt="Kingston Wok Mobile Image" desc={KingstonWokInfo.description} title={KingstonWokInfo.title} />
       case "C&F Skincare":
         return <ShowPage title="C&F Skincare Center" />
       case "Job Tracker":
