@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import pfp from '../media/pfp.png';
+import { selectTerm } from '../actions'
+import { connect } from 'react-redux';
 
 
-export default class TopMenu extends Component{
+class TopMenu extends Component{
+
+  clickHandler = (e) => {
+    let term = e.target.innerText.toLowerCase();
+    if (term.length < 24 && term !== "blog") {
+      this.props.selectTerm(term);
+    }
+  }
+
   render(){
     return(
-      <nav className="navbar">
+      <nav onClick={this.clickHandler} className="navbar">
         <li>Work</li>
         <li>About</li>
         <li className="banner-logo">
-          <img src={pfp} />
+          <img alt="Logo" src={pfp} />
         </li>
-        <li>Blog</li>
+        <li><a href="https://zenkaideveloper.github.io/">Blog</a></li>
         <li>Contact</li>
       </nav>
     )
   }
 }
+
+export default connect(null, { selectTerm })(TopMenu)

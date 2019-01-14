@@ -21,7 +21,8 @@ class Main extends Component{
     imgId:"",
     headerContent:"Hi, im Andy.",
     img:SelfImg,
-    height:0
+    height:0,
+    animation:"none"
   }
 
   borderHighlight = ()=>{
@@ -47,6 +48,9 @@ class Main extends Component{
         behavior: 'smooth'
       })
     }
+    // if(window.sessionStorage.noAnimate){
+    //   this.setState({})
+    // }
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -65,94 +69,96 @@ class Main extends Component{
         <div className="horizontal-header">
           <TopMenu />
         </div>
-
-        <h1 ref={this.work} className='work'>Featured Work</h1>
-        <hr className="style-two"/>
-        <div onScroll={this.scrollHandler} className="homepage-showcase">
-
-          <div className="kingston-wok">
-            <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokBanner} />
-          </div>
-
-          <div className="skincare">
-            <Project info={["", "skincare"]} icon="" name="C&F Skincare" image={SkinCareCenterMobile} />
-          </div>
-
-          <div className="mudkip">
-            <Project info={["", "PWA"]} icon="" name="Job Tracker" image={Mudkip} />
-          </div>
-
-          <div className="jukebox">
-            <Project info={["Jukebox", "music"]} icon="fas fa-headphones-alt" name="Social Jukebox" image={Jukebox} />
-          </div>
-
-          <div className="beatpop">
-            <Project info={["Music", "game"]} icon="fas fa-headphones-alt" name="BeatPop" image={BeatPop} />
-          </div>
-
-          <div ref={this.about} className="about-header">
-            <h2 className="work">About</h2>
-            <hr className="style-two"/>
-          </div>
-
-          <div onMouseLeave={this.borderUnhighlight} onMouseOver={this.borderHighlight} className="about">
-            <h2>{this.state.headerContent}</h2>
-            <img id={this.state.imgId} className="self-img" src={this.state.img} alt="portrait of the developer"/>
-            <p>
-              I am a web developer and the founder of Zenkai Tech. Here at Zenkai Tech we design and build stunning web applications that align with modern and minimalist patterns with added spice. All products are built to be mobile responsive with the latest technologies that have the best chance to stand the test of time. My goal is to help businesses start an online presence so that they are more accessible. With happy customers, I can't help but love what I do and am always looking forward to my next project.
-            </p>
-          </div>
-
-
-
-        </div>
-        <div ref={this.contact} className="contact">
-          <h1 className='work'>Contact</h1>
+        <div>
+          <h1 ref={this.work} className='work'>Featured Work</h1>
           <hr className="style-two"/>
-          <h2>Need a website or have a cool project that you want to collaborate on? Feel free to reach out.</h2>
+          <div onScroll={this.scrollHandler} className="homepage-showcase">
 
-
-          <div className="card">
-            <div className="icon-info">
-              <div className="card-front">
-                <div className="contact-first">
-                  <img src={pfp} alt="company logo" />
-                </div>
-                <div className="info-text">
-                  <div className="my-info">
-                    <small>Web Developer</small>
-                    <h3>Andy Wang</h3>
-                  </div>
-                  <p><i className="far fa-envelope"></i> andy@zenkai.tech</p>
-                  <p><i className="fas fa-phone"></i> 347-522-1971</p>
-                  <p><i className="fas fa-globe"></i> zenkai.tech</p>
-                </div>
-              </div>
-              <div className="card-back">
-                <h2>Find Me On</h2>
-                <div className="icon-container">
-
-                  <p className="linkedin-icon icon">
-                    <a target="_blank" href="https://www.linkedin.com/in/andy-wang32/"><i className="fab fa-linkedin"></i></a>
-                  </p>
-
-                  <p className="gh-icon icon">
-                    <a target="_blank" href="https://github.com/ZenkaiDeveloper"><i className="fab fa-github"></i></a>
-                  </p>
-
-                  <p className="yt-icon icon">
-                    <a target="_blank" href="https://www.youtube.com/channel/UCbSkA8Z_qpKpRenDjv2D3nA?"><i className="fab fa-youtube"></i></a>
-                  </p>
-
-                </div>
-              </div>
-
+            <div className="kingston-wok">
+              <Project info={["Restaurant", "asianfusion"]} icon="fas fa-utensils" name="Kingston Wok" image={KingstonWokBanner} />
             </div>
+
+            <div className="skincare">
+              <Project info={["", "skincare"]} icon="" name="C&F Skincare" image={SkinCareCenterMobile} />
+            </div>
+
+            <div className="mudkip">
+              <Project info={["", "PWA"]} icon="" name="Job Tracker" image={Mudkip} />
+            </div>
+
+            <div className="jukebox">
+              <Project info={["Jukebox", "music"]} icon="fas fa-headphones-alt" name="Social Jukebox" image={Jukebox} />
+            </div>
+
+            <div className="beatpop">
+              <Project info={["Music", "game"]} icon="fas fa-headphones-alt" name="BeatPop" image={BeatPop} />
+            </div>
+
+            <div ref={this.about} className="about-header">
+              <h2 className="work">About</h2>
+              <hr className="style-two"/>
+            </div>
+
+            <div onMouseLeave={this.borderUnhighlight} onMouseOver={this.borderHighlight} className="about">
+              <h2>{this.state.headerContent}</h2>
+              <img id={this.state.imgId} className="self-img" src={this.state.img} alt="portrait of the developer"/>
+              <p>
+                I am a web developer and the founder of Zenkai Tech. Here at Zenkai Tech we design and build stunning web applications that align with modern and minimalist patterns with added spice. All products are built to be mobile responsive with the latest technologies that have the best chance to stand the test of time. My goal is to help businesses start an online presence so that they are more accessible. With happy customers, I can't help but love what I do and am always looking forward to my next project.
+              </p>
+            </div>
+
+
+
+          </div>
+          <div ref={this.contact} className="contact">
+            <h1 className='work'>Contact</h1>
+            <hr className="style-two"/>
+            <h2>Need a website or have a cool project that you want to collaborate on? Feel free to reach out.</h2>
+
+            <div className="card">
+              <div className="icon-info">
+                <div className="card-front">
+                  <div className="contact-first">
+                    <img src={pfp} alt="company logo" />
+                  </div>
+                  <div className="info-text">
+                    <div className="my-info">
+                      <small>Web Developer</small>
+                      <h3>Andy Wang</h3>
+                    </div>
+                    <p><i className="far fa-envelope"></i> andy@zenkai.tech</p>
+                    <p><i className="fas fa-phone"></i> 347-522-1971</p>
+                    <p><i className="fas fa-globe"></i> zenkai.tech</p>
+                  </div>
+                </div>
+                <div className="card-back">
+                  <h2>Find Me On</h2>
+                  <div className="icon-container">
+
+                    <p className="linkedin-icon icon">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andy-wang32/"><i className="fab fa-linkedin"></i></a>
+                    </p>
+
+                    <p className="gh-icon icon">
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/ZenkaiDeveloper"><i className="fab fa-github"></i></a>
+                    </p>
+
+                    <p className="yt-icon icon">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCbSkA8Z_qpKpRenDjv2D3nA?"><i className="fab fa-youtube"></i></a>
+                    </p>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>
 
       </div>
+
 
     )
   }

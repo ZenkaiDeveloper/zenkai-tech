@@ -10,11 +10,13 @@ class Project extends Component{
     imgText:{display:"none"}
   }
   overlay = () => {
-    this.setState({
-      imgText:{position:"absolute", color:"#fff",left:"30%", top:"15%", fontSize:"2rem"},
-      imgHover:{opacity:"0.5", transition: ".4s ease-in-out"},
-      divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative", overflow:"hidden", borderRadius:"5px"}
-    })
+    if (window.innerWidth > 800) {
+      this.setState({
+        imgText:{position:"absolute", color:"#fff",left:"30%", top:"15%", fontSize:"2rem"},
+        imgHover:{opacity:"0.5", transition: ".4s ease-in-out"},
+        divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative", overflow:"hidden", borderRadius:"5px"}
+      })
+    }  
   }
 
   unoverlay= () => {
@@ -29,10 +31,19 @@ class Project extends Component{
     this.props.selectComponent(this.props.name)
   }
 
+  componentDidMount(){
+    if (window.innerWidth < 800) {
+      this.setState({
+        imgText:{display:"block"}
+
+      })
+    }
+  }
+
   render(){
     return(
       <div style={this.state.divHover} onClick={this.clickHandler} onMouseLeave={this.unoverlay} onMouseOver={this.overlay}>
-        <div style={this.state.imgText}>
+        <div className="project-intro" style={this.state.imgText}>
           <h2>{this.props.name}</h2>
           <p><small><i className={this.props.icon}></i> {this.props.info[0]}</small>   <small style={{marginLeft:"2rem"}}>#{this.props.info[1]}</small></p>
         </div>

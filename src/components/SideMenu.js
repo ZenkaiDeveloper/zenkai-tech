@@ -16,8 +16,8 @@ class SideMenu extends Component{
   render(){
     return(
       <div>
-        <div onClick={this.clickHandler} className="homepage-left">
-          <div className="navigation">
+        <div className="homepage-left">
+          <div onClick={this.clickHandler} className="navigation">
             <li>Work</li>
             <li>About</li>
             <li><a href="https://zenkaideveloper.github.io/">Blog</a></li>

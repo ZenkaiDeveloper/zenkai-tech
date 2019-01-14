@@ -11,6 +11,7 @@
 
 .navbar{
   list-style-type: none;
+  z-index: 2;
   position: fixed;
   background-color:#eee;
   width:100%;
@@ -25,6 +26,7 @@
 
 .navbar li a{
   text-decoration: none;
+  color: #000;
 }
 
 .work{
@@ -342,10 +344,13 @@ hr.style-two {
 
 
 
-
 @media screen and (max-width:800px){
   .horizontal-header{
     display:block;
+  }
+
+  .homepage{
+    grid-template-columns: 1fr;
   }
 
   .homepage > div:nth-child(1){
@@ -359,27 +364,36 @@ hr.style-two {
     grid-gap: 2rem;
   }
 
-  .kingston-wok-mobile{
-    grid-column: 1/13;
-    display: block;
+  .homepage-showcase .kingston-wok{
+    margin: 0;
+    opacity: 1;
+    animation-name: none;
   }
 
   .work{
+    font-size: 2rem;
     margin-top:6rem;
   }
 
-  .kingston-wok-mobile img{
+  .project-intro{
+    font-family:Thasadith;
+    text-align: center;
+  }
+
+  .homepage-showcase .kingston-wok img{
     border-radius: 0;
   }
 
   .homepage-showcase .skincare, .homepage-showcase > .mudkip{
     grid-column: 1/13;
+    opacity: 1;
+    animation-name: none;
     height:80%;
     margin:0;
   }
 
   .homepage-showcase > .jukebox,.homepage-showcase .beatpop{
-    display: none;
+    margin:0;
   }
 
   .homepage-showcase .skincare img, .homepage-showcase > .mudkip img,.homepage-showcase > .jukebox img,.homepage-showcase .beatpop img{
@@ -433,6 +447,7 @@ hr.style-two {
     width:50%;
     margin: 0 auto;
   }
+
 }
 
 
