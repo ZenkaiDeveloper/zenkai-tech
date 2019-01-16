@@ -9,11 +9,12 @@ import SkincareCenterInfo from "./media/CFSkincareCenter";
 import MudkipInfo from "./media/Mudkip";
 import SocialJukeboxInfo from "./media/SocialJukebox";
 import BeatPopInfo from "./media/BeatPop";
+import MainNoAnimate from "./components/MainNoAnimate"
 
 
 class App extends Component {
   state={
-    rightComponent:"main"
+    rightComponent:"animate"
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,7 +33,7 @@ class App extends Component {
   showComponent = () => {
     switch (this.state.rightComponent) {
       case "main":
-        return <Main />;
+        return <MainNoAnimate />;
       case "Kingston Wok":
         return <ShowPage video={KingstonWokInfo.video} img={KingstonWokInfo.mobilePic} alt="Kingston Wok Mobile Image" desc={KingstonWokInfo.description} title={KingstonWokInfo.title} />
       case "C&F Skincare":
