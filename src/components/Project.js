@@ -16,7 +16,7 @@ class Project extends Component{
         imgHover:{opacity:"0.5", transition: ".4s ease-in-out"},
         divHover:{backgroundColor:"rgba(0,0,0,1)", position:"relative", overflow:"hidden", borderRadius:"5px"}
       })
-    }  
+    }
   }
 
   unoverlay= () => {

@@ -44,7 +44,7 @@ class App extends Component {
         return <ShowPage title={SocialJukeboxInfo.title} video={SocialJukeboxInfo.video} img={SocialJukeboxInfo.mobilePic} alt="Socail Jukebox Mobile Pic" desc={SocialJukeboxInfo.description} />
 
       case "BeatPop":
-        return <ShowPage title={BeatPopInfo.title} imgInfo="Custom Algorithm for Particles" img={BeatPopInfo.mobilePic} video={BeatPopInfo.video} desc={BeatPopInfo.description} />
+        return <ShowPage title={BeatPopInfo.title} imgInfo="Custom Algorithm for Particles" img={BeatPopInfo.mobilePic} video={BeatPopInfo.video} desc={BeatPopInfo.description} imgDesc={BeatPopInfo.imgDesc} />
       default:
         return <Main />;
     }

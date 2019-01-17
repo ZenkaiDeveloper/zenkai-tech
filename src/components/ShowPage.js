@@ -26,6 +26,7 @@ class ShowPage extends React.Component{
           <div className="description-right">
             <h2>{this.props.imgInfo}</h2>
             <img src={this.props.img} alt={this.props.alt} />
+            <p>{this.props.imgDesc}</p>
           </div>
         </div>
       </div>
