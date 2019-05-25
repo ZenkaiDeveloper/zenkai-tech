@@ -9,7 +9,7 @@ import SkincareCenterInfo from "./media/CFSkincareCenter";
 import MudkipInfo from "./media/Mudkip";
 import SocialJukeboxInfo from "./media/SocialJukebox";
 import BeatPopInfo from "./media/BeatPop";
-import MainNoAnimate from "./components/MainNoAnimate"
+import MainNoAnimate from "./components/MainNoAnimate";
 
 
 class App extends Component {
@@ -42,7 +42,6 @@ class App extends Component {
         return <ShowPage title={MudkipInfo.title} video={MudkipInfo.video} img={MudkipInfo.mobilePic} alt="Job Tracker mobile image" desc={MudkipInfo.description} />
       case "Social Jukebox":
         return <ShowPage title={SocialJukeboxInfo.title} video={SocialJukeboxInfo.video} img={SocialJukeboxInfo.mobilePic} alt="Socail Jukebox Mobile Pic" desc={SocialJukeboxInfo.description} />
-
       case "BeatPop":
         return <ShowPage title={BeatPopInfo.title} imgInfo="Custom Algorithm for Particles" img={BeatPopInfo.mobilePic} video={BeatPopInfo.video} desc={BeatPopInfo.description} imgDesc={BeatPopInfo.imgDesc} />
       default:
@@ -57,7 +56,6 @@ class App extends Component {
           <SideMenu />
           {this.showComponent()}
         </div>
-
       </div>
     );
   }
